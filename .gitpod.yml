@@ -1,0 +1,21 @@
+mage:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: docker info
+    command: |
+      chmod +x setup-containers.sh
+      ./setup-containers.sh
+      ansible-playbook -i inventory.ini playbook.yml
+
+ports:
+  - port: 2221
+    onOpen: ignore
+  - port: 2222
+    onOpen: ignore
+  - port: 2223
+    onOpen: ignore
+  - port: 2224
+    onOpen: ignore
+  - port: 2225
+    onOpen: ignore
